@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_window/flutter_overlay_window.dart';
-import 'package:perfect_volume_control/perfect_volume_control.dart';
 import 'volume_service.dart';
 
 /// Entry point for the overlay window.
@@ -19,7 +18,7 @@ class OverlayApp extends StatelessWidget {
       home: const VolumeControlOverlay(),
       builder: (context, child) {
         return MediaQuery(
-          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+          data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(1.0)),
           child: child!,
         );
       },

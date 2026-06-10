@@ -27,9 +27,9 @@ Future<void> _requestPermissions() async {
 /// Initialize the overlay window configuration.
 Future<void> _initializeOverlay() async {
   try {
-    await FlutterOverlayWindow.overlayPutMethod(
-      overlayEntryPoint,
-      isNotificationPanel: false,
+    await FlutterOverlayWindow.showOverlay(
+      alignment: OverlayAlignment.topCenter,
+
     );
     debugPrint('Overlay initialized successfully');
   } catch (e) {
@@ -38,7 +38,7 @@ Future<void> _initializeOverlay() async {
 }
 
 class VolumeOverlayApp extends StatelessWidget {
-  const VolumeOverlayApp({Key? key}) : super(key: key);
+  const VolumeOverlayApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -80,8 +80,8 @@ class _TransparentHomeState extends State<TransparentHome> {
         await FlutterOverlayWindow.showOverlay(
           height: 80,
           width: 300,
-          alignment: Alignment.topCenter,
-          margin: const EdgeInsets.only(top: 50),
+          alignment: OverlayAlignment.topCenter,
+          //margin: const EdgeInsets.only(top: 50),
         );
         debugPrint('Overlay shown successfully');
       } else {

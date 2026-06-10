@@ -18,7 +18,7 @@ class VolumeService {
   Future<void> initialize() async {
     if (!_initialized) {
       try {
-        await PerfectVolumeControl.init();
+        //await PerfectVolumeControl.init();
         _initialized = true;
         debugPrint('VolumeService initialized successfully');
       } catch (e) {
